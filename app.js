@@ -44,3 +44,17 @@ function FirstFactorial(num) {
 }
 
 console.log(FirstFactorial(8));
+
+
+// Coding Challenge 3)
+// Create a function that takes in a string and reverses it so "Hello World" = "dlroW olleH"
+// Solution 
+function FirstReverse(str) { 
+
+  // code goes here  
+  let arr = str.split("");
+  return arr.reverse().join("");
+
+}
+
+console.log(FirstReverse('I love doing coding challenges'));
