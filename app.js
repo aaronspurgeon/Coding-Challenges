@@ -65,7 +65,7 @@ console.log(FirstReverse('I love doing coding challenges'));
 // function SimpleAdding(num) add up all the numbers from 1 to num.For example: if the input is 4 then your program should
 // return 10 because 1 + 2 + 3 + 4 = 10. For the test cases, the parameter num will be any number from 1 to 1000.
 // Solution 
-function SimpleAdding(num) { 
+function SimpleAdding(num) {
 
   // code goes here 
   let sum = []
@@ -80,3 +80,27 @@ function SimpleAdding(num) {
 }
 
 console.log(SimpleAdding(8));
+
+
+// Coding Challenge 5)
+// Have the
+// function CheckNums(num1, num2) take both parameters being passed and
+// return the string true
+// if num2 is greater than num1, otherwise
+// return the string false.If the parameter values are equal to each other then
+// return the string - 1.
+// Solution
+function CheckNums(num1,num2) { 
+
+  // code goes here  
+  if (num2 === num1) {
+    return -1
+  } else if (num2 > num1) {
+    return true
+  } else {
+    return false
+  }
+
+}
+
+console.log(CheckNums(4, 5));
