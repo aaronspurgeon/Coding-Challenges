@@ -90,7 +90,7 @@ console.log(SimpleAdding(8));
 // return the string false.If the parameter values are equal to each other then
 // return the string - 1.
 // Solution
-function CheckNums(num1,num2) { 
+function CheckNums(num1, num2) {
 
   // code goes here  
   if (num2 === num1) {
@@ -104,3 +104,26 @@ function CheckNums(num1,num2) {
 }
 
 console.log(CheckNums(4, 5));
+
+
+// Coding Challenge 6
+// Have the
+// function TimeConvert(num) take the num parameter being passed and
+// return the number of hours and minutes the parameter converts to(ie.if num = 63 then the output should be 1: 3).Separate the number of hours and minutes with a colon.
+// Solution
+function TimeConvert(num) { 
+
+  // code goes here  
+  let hours = '0';
+  let mins = '00';
+  let remainder;
+  if (num >= 60) {
+    hours = Math.floor(num / 60);
+    mins = num % 60;
+  } else {
+    mins = num;
+  }
+  return `${hours}:${mins}`
+}
+
+console.log(TimeConvert(125));
