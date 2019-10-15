@@ -111,7 +111,7 @@ console.log(CheckNums(4, 5));
 // function TimeConvert(num) take the num parameter being passed and
 // return the number of hours and minutes the parameter converts to(ie.if num = 63 then the output should be 1: 3).Separate the number of hours and minutes with a colon.
 // Solution
-function TimeConvert(num) { 
+function TimeConvert(num) {
 
   // code goes here  
   let hours = '0';
@@ -127,3 +127,31 @@ function TimeConvert(num) {
 }
 
 console.log(TimeConvert(125));
+
+
+// Coding Challenge 7
+// LeetCode problem #242 Valid Anagram
+// Given two strings s and t , write a function to determine if t is an anagram of s.
+// Solution
+var isAnagram = function(s, t) {
+  if (s.length !== t.length) {
+      return false
+  }
+  
+  const sCharCounts = {};
+  // Fill sCharCounts
+  for (let i = 0; i < s.length; i++) {
+      const sChar = s[i];
+      sCharCounts[sChar] = sCharCounts[sChar] + 1 || 1
+  }
+  
+  for (let i = 0; i < t.length; i++) {
+      const tChar = t[i];
+      if(!sCharCounts[tChar]) {
+          return false;
+      } else {
+          sCharCounts[tChar]--;
+      }
+  }
+  return true;
+};
