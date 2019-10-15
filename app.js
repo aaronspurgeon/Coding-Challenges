@@ -155,3 +155,15 @@ var isAnagram = function(s, t) {
   }
   return true;
 };
+
+
+// Coding Challenge 8
+// Function that adds up to the number; 1 + 2 + 3 + 4 = 10
+// Completed this before but applying Big O Notation to make it
+// run faster.
+// Solution
+
+function addUpTo(n) {
+  return n * (n + 1) / 2;
+}
+console.log(addUpTo(100))
