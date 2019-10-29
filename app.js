@@ -1,6 +1,5 @@
 // Coding challenges completed on Coderbyte and other resources
 
-
 // Coding challenge 1)
 // Create a function that takes a string as a parameter and displays the longest word in that string
 // Solution
@@ -10,17 +9,14 @@ function LongestWord(sen) {
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].length > longest.length) {
-
       longest = arr[i];
     }
   }
   return longest;
 }
 
-// keep this function call here 
-console.log(LongestWord('I am the longest word in this sentence'));
-
-
+// keep this function call here
+console.log(LongestWord("I am the longest word in this sentence"));
 
 // Coding challenge 2)
 // Have the
@@ -29,7 +25,6 @@ console.log(LongestWord('I am the longest word in this sentence'));
 // return (4 * 3 * 2 * 1) = 24. For the test cases, the range will be between 1 and 18 and the input will always be an integer.
 // Solution
 function FirstFactorial(num) {
-
   // code goes here
   let numArr = [];
   for (let i = num; i <= num; i--) {
@@ -40,47 +35,40 @@ function FirstFactorial(num) {
   }
   const product = numArr.reduce((a, b) => a * b);
   return product;
-
 }
 
 console.log(FirstFactorial(8));
 
-
 // Coding Challenge 3)
 // Create a function that takes in a string and reverses it so "Hello World" = "dlroW olleH"
-// Solution 
+// Solution
 function FirstReverse(str) {
-
-  // code goes here  
+  // code goes here
   let arr = str.split("");
   return arr.reverse().join("");
-
 }
 
-console.log(FirstReverse('I love doing coding challenges'));
-
+console.log(FirstReverse("I love doing coding challenges"));
 
 // Coding Challenge 4)
 // Have the
 // function SimpleAdding(num) add up all the numbers from 1 to num.For example: if the input is 4 then your program should
 // return 10 because 1 + 2 + 3 + 4 = 10. For the test cases, the parameter num will be any number from 1 to 1000.
-// Solution 
+// Solution
 function SimpleAdding(num) {
-
-  // code goes here 
-  let sum = []
+  // code goes here
+  let sum = [];
   for (let i = num; i <= num; i--) {
     if (i >= 1) {
-      sum.push(i)
+      sum.push(i);
     } else {
       break;
     }
   }
-  return sum.reduce((a, b) => a + b)
+  return sum.reduce((a, b) => a + b);
 }
 
 console.log(SimpleAdding(8));
-
 
 // Coding Challenge 5)
 // Have the
@@ -91,20 +79,17 @@ console.log(SimpleAdding(8));
 // return the string - 1.
 // Solution
 function CheckNums(num1, num2) {
-
-  // code goes here  
+  // code goes here
   if (num2 === num1) {
-    return -1
+    return -1;
   } else if (num2 > num1) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
-
 }
 
 console.log(CheckNums(4, 5));
-
 
 // Coding Challenge 6
 // Have the
@@ -112,10 +97,9 @@ console.log(CheckNums(4, 5));
 // return the number of hours and minutes the parameter converts to(ie.if num = 63 then the output should be 1: 3).Separate the number of hours and minutes with a colon.
 // Solution
 function TimeConvert(num) {
-
-  // code goes here  
-  let hours = '0';
-  let mins = '00';
+  // code goes here
+  let hours = "0";
+  let mins = "00";
   let remainder;
   if (num >= 60) {
     hours = Math.floor(num / 60);
@@ -123,11 +107,10 @@ function TimeConvert(num) {
   } else {
     mins = num;
   }
-  return `${hours}:${mins}`
+  return `${hours}:${mins}`;
 }
 
 console.log(TimeConvert(125));
-
 
 // Coding Challenge 7
 // LeetCode problem #242 Valid Anagram
@@ -135,27 +118,26 @@ console.log(TimeConvert(125));
 // Solution
 var isAnagram = function(s, t) {
   if (s.length !== t.length) {
-      return false
+    return false;
   }
-  
+
   const sCharCounts = {};
   // Fill sCharCounts
   for (let i = 0; i < s.length; i++) {
-      const sChar = s[i];
-      sCharCounts[sChar] = sCharCounts[sChar] + 1 || 1
+    const sChar = s[i];
+    sCharCounts[sChar] = sCharCounts[sChar] + 1 || 1;
   }
-  
+
   for (let i = 0; i < t.length; i++) {
-      const tChar = t[i];
-      if(!sCharCounts[tChar]) {
-          return false;
-      } else {
-          sCharCounts[tChar]--;
-      }
+    const tChar = t[i];
+    if (!sCharCounts[tChar]) {
+      return false;
+    } else {
+      sCharCounts[tChar]--;
+    }
   }
   return true;
 };
-
 
 // Coding Challenge 8
 // Function that adds up to the number; 1 + 2 + 3 + 4 = 10
@@ -164,6 +146,44 @@ var isAnagram = function(s, t) {
 // Solution
 
 function addUpTo(n) {
-  return n * (n + 1) / 2;
+  return (n * (n + 1)) / 2;
 }
-console.log(addUpTo(100))
+console.log(addUpTo(100));
+
+// Coding Challenge 9
+// Create a function that takes in a string and returns the count of each character in the string
+// Solution
+
+// function charCount(str) {
+//   // create an object to return at the end
+//   let result = {};
+//   // loop over the string for each character...
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i].toLowerCase();
+//     // if the char is a number/letter and is a key in the object, add one to the char key
+//     // if the char is a (space, period, etc) do nothing
+//     if (/[a-z0-9]/.test(char)) {
+//       if (result[char] > 0) {
+//         result[char]++;
+//       } else {
+//         // if the char is a number/letter and not in the object, add it to the object with one
+//         result[char] = 1;
+//       }
+//     }
+//   }
+//   // return object at end
+//   return result;
+// }
+
+// refactored version
+function charCount(str) {
+  let obj = {};
+  for (let char of str) {
+    char = char.toLowerCase();
+    if (/[a-z0-9]/.test(char)) {
+      obj[char] = ++obj[char] || 1;
+    }
+  }
+  return obj;
+}
+console.log(charCount("hi there!"));
