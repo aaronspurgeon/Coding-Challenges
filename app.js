@@ -187,3 +187,38 @@ function charCount(str) {
   return obj;
 }
 console.log(charCount("hi there!"));
+
+// Coding Challenge 10
+// Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letter of another, such as cinema, formed from iceman.
+// Solution
+// Used the frequency counter pattern to solve this
+
+function validAnagram(str1, str2) {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+  let arr1 = str1.split("");
+  let arr2 = str2.split("");
+
+  for (let val of arr1) {
+    frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+  }
+
+  for (let val of arr2) {
+    frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+  }
+
+  for (let key in frequencyCounter1) {
+    if (!(key in frequencyCounter2)) {
+      return false;
+    }
+    if (frequencyCounter2[key] !== frequencyCounter1[key]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(validAnagram("cinema", "iceman"));
