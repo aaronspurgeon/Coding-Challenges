@@ -222,3 +222,25 @@ function validAnagram(str1, str2) {
 }
 
 console.log(validAnagram("cinema", "iceman"));
+
+// Coding challenge 11
+// Implement a function called countUniqueValues which accepts a sorted array, and counts the unique values in the array.
+// there can be negative numbers in the array, but it will always be sorted
+// Solution
+function countUniqueValues(numArr) {
+  // add whatever parameters you deem necessary - good luck!
+  let i = 0;
+  for (let j = 1; j < numArr.length; j++) {
+    if (numArr[i] !== numArr[j]) {
+      i++;
+      numArr[i] = numArr[j];
+    }
+  }
+  if (i > 0) {
+    return i + 1;
+  } else {
+    return i;
+  }
+}
+
+console.log(countUniqueValues([1, 1, 1, 2, 3, 4, 4, 5, 6]));
