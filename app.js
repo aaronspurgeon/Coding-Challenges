@@ -244,3 +244,9 @@ function countUniqueValues(numArr) {
 }
 
 console.log(countUniqueValues([1, 1, 1, 2, 3, 4, 4, 5, 6]));
+
+// function findMiddle(arr) {
+//   let middle = arr.length / 2;
+//   return arr[middle - 1];
+// }
+// console.log(findMiddle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
