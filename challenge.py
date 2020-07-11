@@ -56,4 +56,12 @@ def isPalindrome(string):
         return False
 
 
-print(isPalindrome('abcdcba'))
+# find the media of two sorted arrays
+def median_arr(arr1, arr2):
+    middle1 = len(arr1) // 2
+    middle2 = len(arr2) // 2
+    median = (arr1[middle1] + arr2[middle2]) / 2
+    return float(median)
+
+
+print(median_arr([1, 3, 5], [2, 4, 6]))
