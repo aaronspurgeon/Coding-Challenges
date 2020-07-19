@@ -88,40 +88,62 @@
 
 # # print(boolean_func(boolean_matrix))
 
-def sockMerchant(n, ar):
-    # possible_pairs = 0
-    # trying a brute force solution that has nested for loops
-    #  my_dict = {}
-    # for i in arr:
-    #     if len(my_dict) == 0:
-    #         my_dict[i] = 1
-    #     elif i not in my_dict.keys():
-    #         my_dict[i] = 1
-    #     else:
-    #         my_dict[i] += 1
-    # for i in my_dict:
-    #     if my_dict[i] == 1:
-    #         return i
-    matches = 0
+# def sockMerchant(n, ar):
+# possible_pairs = 0
+# trying a brute force solution that has nested for loops
+#  my_dict = {}
+# for i in arr:
+#     if len(my_dict) == 0:
+#         my_dict[i] = 1
+#     elif i not in my_dict.keys():
+#         my_dict[i] = 1
+#     else:
+#         my_dict[i] += 1
+# for i in my_dict:
+#     if my_dict[i] == 1:
+#         return i
+# matches = 0
 
-    my_dict = {}
-    for i in ar:
-        if len(my_dict) == 0:
-            my_dict[i] = 1
-        elif i not in my_dict.keys():
-            my_dict[i] = 1
-        else:
-            my_dict[i] += 1
+# my_dict = {}
+# for i in ar:
+#     if len(my_dict) == 0:
+#         my_dict[i] = 1
+#     elif i not in my_dict.keys():
+#         my_dict[i] = 1
+#     else:
+#         my_dict[i] += 1
 
-    for i in my_dict:
-        if my_dict[i] % 2 == 0:
-            pair = my_dict[i] // 2
-            matches = matches + pair
-        elif my_dict[i] > 2:
-            odd = my_dict[i] = my_dict[i] - 1
-            pair = odd // 2
-            matches = matches + pair
-    return matches
+# for i in my_dict:
+#     if my_dict[i] % 2 == 0:
+#         pair = my_dict[i] // 2
+#         matches = matches + pair
+#     elif my_dict[i] > 2:
+#         odd = my_dict[i] = my_dict[i] - 1
+#         pair = odd // 2
+#         matches = matches + pair
+# return matches
 
 
-print(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]))
+# print(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]))
+
+
+def countingValleys(n, s):
+    # we can assume sea level is 0
+    level_track = 0
+
+    num_valley = 0
+   # need to make a base case of keeping track of everytime we get back to 0
+    for i in s:
+        if i == 'D':
+            if level_track == 0:
+                level_track = level_track - 1
+                num_valley = num_valley + 1
+            else:
+                level_track = level_track - 1
+        elif i == 'U':
+            level_track = level_track + 1
+
+    return num_valley
+
+
+print(countingValleys(12, 'DDUUDDUDUUUD'))
