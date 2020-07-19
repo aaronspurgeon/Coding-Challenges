@@ -127,23 +127,46 @@
 # print(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]))
 
 
-def countingValleys(n, s):
-    # we can assume sea level is 0
-    level_track = 0
+# def countingValleys(n, s):
+#     # we can assume sea level is 0
+#     level_track = 0
 
-    num_valley = 0
-   # need to make a base case of keeping track of everytime we get back to 0
-    for i in s:
-        if i == 'D':
-            if level_track == 0:
-                level_track = level_track - 1
-                num_valley = num_valley + 1
-            else:
-                level_track = level_track - 1
-        elif i == 'U':
-            level_track = level_track + 1
+#     num_valley = 0
+#    # need to make a base case of keeping track of everytime we get back to 0
+#     for i in s:
+#         if i == 'D':
+#             if level_track == 0:
+#                 level_track = level_track - 1
+#                 num_valley = num_valley + 1
+#             else:
+#                 level_track = level_track - 1
+#         elif i == 'U':
+#             level_track = level_track + 1
 
-    return num_valley
+#     return num_valley
 
 
-print(countingValleys(12, 'DDUUDDUDUUUD'))
+# print(countingValleys(12, 'DDUUDDUDUUUD'))
+
+def jumpingOnClouds(c):
+    jumps = 0
+    current = 0
+
+    while current <= len(c) - 2:
+
+        if current + 1 == len(c) - 1:
+            jumps = jumps + 1
+            current = current + 1
+        elif c[current + 2] == 0:
+            current = current + 2
+            jumps = jumps + 1
+            print(c[current])
+        elif c[current + 2] == 1:
+            current = current + 1
+            jumps = jumps + 1
+            print(c[current])
+
+    return jumps
+
+
+print(jumpingOnClouds([0, 0, 0, 1, 0, 0]))
