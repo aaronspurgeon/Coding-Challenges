@@ -148,25 +148,44 @@
 
 # print(countingValleys(12, 'DDUUDDUDUUUD'))
 
-def jumpingOnClouds(c):
-    jumps = 0
-    current = 0
+# def jumpingOnClouds(c):
+#     jumps = 0
+#     current = 0
 
-    while current <= len(c) - 2:
+#     while current <= len(c) - 2:
 
-        if current + 1 == len(c) - 1:
-            jumps = jumps + 1
-            current = current + 1
-        elif c[current + 2] == 0:
-            current = current + 2
-            jumps = jumps + 1
-            print(c[current])
-        elif c[current + 2] == 1:
-            current = current + 1
-            jumps = jumps + 1
-            print(c[current])
+#         if current + 1 == len(c) - 1:
+#             jumps = jumps + 1
+#             current = current + 1
+#         elif c[current + 2] == 0:
+#             current = current + 2
+#             jumps = jumps + 1
+#             print(c[current])
+#         elif c[current + 2] == 1:
+#             current = current + 1
+#             jumps = jumps + 1
+#             print(c[current])
 
-    return jumps
+#     return jumps
 
 
-print(jumpingOnClouds([0, 0, 0, 1, 0, 0]))
+# print(jumpingOnClouds([0, 0, 0, 1, 0, 0]))
+
+def repeatedString(s, n):
+    repeat_str = [0] * (n + 1)
+    for i in range(n):
+        if i > len(s):
+            ind = i - (len(s) - 1) - 1
+            if ind > len(s) - 1:
+                ind = 0
+                repeat_str[i] = s[ind]
+            else:
+                repeat_str[i] = s[ind]
+            # print(ind)
+        else:
+            repeat_str[i] = s[i]
+    print(repeat_str)
+
+
+repeatedString('asda', 10)
+# abcacabcac
